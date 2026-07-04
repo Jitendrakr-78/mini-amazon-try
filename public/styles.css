@@ -39,7 +39,7 @@ body {
 
 /* Right side ke links (Home, Cart, Login) */
 .nav-links a {
-    color: white;
+    color: lch(57.72% 37.35 23.83);
     text-decoration: none;
     margin-left: 25px;
     font-weight: bold;
