@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Login / Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Amazon Authentication</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main style="padding: 50px;">
+        <div class="admin-form">
+            <h2 id="form-title">Login</h2>
+            <input type="text" id="name" placeholder="Full Name (For Signup Only)" style="display:none; width:95%; padding:8px; margin-bottom:10px;"><br>
+            <input type="email" id="email" placeholder="Email" style="width:95%; padding:8px; margin-bottom:10px;" required><br>
+            <input type="password" id="password" placeholder="Password" style="width:95%; padding:8px; margin-bottom:15px;" required><br>
+            <button id="submit-btn" onclick="handleSubmit()">Login</button>
+            <p id="toggle-text" style="margin-top:15px; cursor:pointer; color:blue;" onclick="toggleForm()">New to Amazon? Create an account</p>
+        </div>
+    </main>
+
+    <script>
+        const API_URL = "https://your-backend-render-url.onrender.com/api/auth";
+        let isLogin = true;
+
+        function toggleForm() {
+            isLogin = !isLogin;
+            document.getElementById('form-title').innerText = isLogin ? "Login" : "Sign Up";
+            document.getElementById('name').style.display = isLogin ? "none" : "block";
+            document.getElementById('submit-btn').innerText = isLogin ? "Login" : "Sign Up";
+            document.getElementById('toggle-text').innerText = isLogin ? "New to Amazon? Create an account" : "Already have an account? Login";
+        }
+
+        async function handleSubmit() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
+
+            const endpoint = isLogin ? '/login' : '/signup';
+            const bodyData = isLogin ? { email, password } : { name, email, password };
+
+            try {
+                const res = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(bodyData)
+                });
+                const data = await res.json();
+
+                if (!res.ok) throw new Error(data.message || "Something went wrong");
+
+                if (isLogin) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('role', data.role);
+                    alert(`Welcome back, ${data.name}!`);
+                    window.location.href = data.role === 'admin' ? 'admin.html' : 'index.html';
+                } else {
+                    alert("Registration Successful! Please login.");
+                    toggleForm();
+                }
+            } catch (err) { alert(err.message); }
+        }
+    </script>
+    <!-- End of body me bas ye line link karein -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
