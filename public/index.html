@@ -2,28 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mini Amazon</title>
-<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Amazon</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Header Navigation Bar -->
-    <header class="navbar">
-        <div class="logo">Mini Amazon</div>
-        
-        <div class="search-container">
-            <input type="text" placeholder="Search products...">
-        </div>
-        
-        
+    <header>
+        <h1>Mini Amazon</h1>
+        <input type="text" id="search" placeholder="Search products..." onkeyup="loadProducts()">
         <nav>
             <a href="index.html">Home</a>
             <a href="cart.html">Cart</a>
             <a href="login.html" id="auth-link">Login</a>
-        </nav> 
-
+        </nav>
     </header>
-</body>
+    <main id="product-list" class="products-grid"></main>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
