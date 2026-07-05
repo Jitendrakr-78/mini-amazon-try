@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:  #031220; /* Dark background color (Amazon style) */
+    background-color:  #0768c4; /* Dark background color (Amazon style) */
     padding: 10px 30px;
     color: white;
 }
