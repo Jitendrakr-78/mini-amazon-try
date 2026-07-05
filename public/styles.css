@@ -1,0 +1,53 @@
+/* Poore page ki basic setting */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Background color jo baki screen par dikh raha hai */
+    
+}
+
+/* Navigation Bar ki styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0768c4; /* Dark background color (Amazon style) */
+    padding: 10px 30px;
+    color: white;
+}
+
+/* Logo ki styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #febd69; /* Orange/Yellowish color jo screen par hai */
+}
+
+/* Search bar ka container aur input */
+.search-container {
+    flex-grow: 1;
+    margin: 0 40px;
+    max-width: 600px; /* Search bar ko bohot lamba hone se rokne ke liye */
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Right side ke links (Home, Cart, Login) */
+.nav-links a {
+    color: lch(57.72% 37.35 23.83);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Hover karne par links ka color change karne ke liye */
+.nav-links a:hover {
+    color: #febd69;
+}
