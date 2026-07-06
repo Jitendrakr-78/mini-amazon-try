@@ -4,11 +4,6 @@
     --light-gray: #eaeded;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 5;
-    background-color: var(--light-gray);
-}
 
 header {
     background-color: var(--amazon-blue);
