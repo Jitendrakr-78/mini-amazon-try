@@ -1,6 +1,5 @@
 // Global Configuration
-//const API_URL = "https://your-backend-render-url.onrender.com/api";
-const API_URL = "https://mini-amazon-1vlq.onrender.com";
+const API_URL = "https://mini-amazon-1vlq.onrender.com/api";
 
 const token = localStorage.getItem('token');
 const role = localStorage.getItem('role');
