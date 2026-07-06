@@ -11,7 +11,7 @@ body {
 
 
 header {
-    background-color: var(--amazon-blue);
+    background-color: var(--light-gray);
     color: rgb(231, 227, 227);
     padding: 10px 30px;
     display: flex;
